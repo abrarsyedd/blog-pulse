@@ -1,0 +1,38 @@
+{
+  "name": "unique-pulse-backend",
+  "version": "1.0.0",
+  "description": "Modern dynamic blog webapp with graph analytics and authentication backend",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix ../client",
+    "dev": "concurrently -k -n SERVER,CLIENT -c green,cyan \"npm run server\" \"npm run client-delay\"",
+    "client-delay": "node -e \"setTimeout(() => require('child_process').exec('npm run client', {stdio: 'inherit'}), 4000)\""
+  },
+  "keywords": [
+    "blog",
+    "nodejs",
+    "mysql",
+    "express",
+    "vue",
+    "jwt",
+    "google-auth"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "google-auth-library": "^9.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  }
+}
