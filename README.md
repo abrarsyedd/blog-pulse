@@ -4,6 +4,10 @@ Blog Pulse is a modern, full-stack, 2-tier web application featuring a Vue.js fr
 
 This document focuses on the infrastructure, architecture, and deployment process.
 
+# 🚀 Architecture
+
+![Architecture](./blog-pulse-architecture.png)
+
 ## 🚀 Key Features
 
 - **Full-Stack Application:** Vue.js 3 (Vite) frontend with a Node.js (Express) API backend.
@@ -12,26 +16,6 @@ This document focuses on the infrastructure, architecture, and deployment proces
 - **Dynamic Provisioning:** EC2 instances automatically clone the repo, install dependencies, build the frontend, and start the server.
 - **Authentication:** Secure user signup and login using JWT and Google OAuth 2.0.
 - **Database:** AWS RDS for a managed MySQL database.
-
----
-
-## 🏗️ Infrastructure & Architecture
-
-This project follows a **2-tier AWS architecture**, separating the **application/web server** (Tier 1) from the **database server** (Tier 2).
-
-### 🧩 Architecture Diagram
-
-```
-(User) --> [Internet] --> [AWS ALB]
-   |                       (HTTPS: 443)
-   |
-   v                       [Private Subnet]
-[EC2 Instance (Web Server)] <--- (HTTP: 3000)
-   | (Node.js App)
-   |
-   v                       [Private Subnet]
-[RDS MySQL Instance]        <--- (MySQL: 3306)
-```
 
 ---
 
