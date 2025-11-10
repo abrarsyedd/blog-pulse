@@ -25,7 +25,7 @@ This project follows a **2-tier AWS architecture**, separating the **application
 (User) --> [Internet] --> [AWS ALB]
    |                       (HTTPS: 443)
    |
-   v                       [Public Subnet]
+   v                       [Private Subnet]
 [EC2 Instance (Web Server)] <--- (HTTP: 3000)
    | (Node.js App)
    |
